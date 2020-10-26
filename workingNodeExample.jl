@@ -160,3 +160,22 @@ plot!(time, EsNNLst[2], label="Es (1.75)")
 plot!(time, EsNNLst[3], label="Es (2.0)")
 
 scatter!(sol.t, Es, label="Data", mc=:grey)
+
+
+# Improving prediction at lower flow rates
+
+dCdt = Chain(Dense(3, 8, σ), Dense(8, 8, σ), Dense(8,1), x->x.*[1.0; 1.0; -1.0])
+tsteps = range(0.0, 240.0, length = 21)
+prob = NeuralODE(dCdt, (0.0, 240.0), Tsit5(), 
+  saveat = tsteps, ); #add callback
+
+
+expData1 = generate_true_solution([45.0 60.0 0.0], 240.0)
+expData2 = generate_true_solution([20.0 30.0 0.0], 240.0)
+expData3 = generate_true_solution([10 20.0 0.0], 240.0)
+expData4 = generate_true_solution([5.0 25.0 1.0], 240.0)
+
+expData1[1]
+
+data = ([expData1[1] expData2[1] expData3[1] expData4[1]], 0:4*240/80:4*240)
+plot_reaction(data)
