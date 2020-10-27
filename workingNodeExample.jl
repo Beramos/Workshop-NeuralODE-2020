@@ -169,6 +169,13 @@ tsteps = range(0.0, 240.0, length = 21)
 prob = NeuralODE(dCdt, (0.0, 240.0), Tsit5(), 
   saveat = tsteps, ); #add callback
 
+initialConditions = 
+[
+  [45.0; 60.0; 0.0],
+  [20.0; 30.0; 0.0],
+  [10.0; 20.0; 0.0],
+  [5.0; 25.0; 1.0]
+]
 
 expData1 = generate_true_solution([45.0 60.0 0.0], 240.0)
 expData2 = generate_true_solution([20.0 30.0 0.0], 240.0)
@@ -179,3 +186,32 @@ expData1[1]
 
 data = ([expData1[1] expData2[1] expData3[1] expData4[1]], 0:4*240/80:4*240)
 plot_reaction(data)
+
+dCdt = Chain(Dense(3, 8, σ), Dense(8, 8, σ), Dense(8,1), x->x.*[1.0; 1.0; -1.0])
+tsteps = range(0.0, 4*240.0, length = (4*20+1))
+
+times = 240:240:4*240
+function condition(u, t, integrator) 
+  t in times
+end
+
+
+affect!(integrator) = integrator.u = Iterators.cycle(initialConditions)
+odecb = DiscreteCallback(condition, affect!)
+
+prob = NeuralODE(dCdt, (0.0, 4*240.0), Tsit5(), 
+  saveat = tsteps, callback=odecb, tstops=times);
+
+
+function predict_neuralODE(p)
+  Array(prob(u₀, p))
+end
+
+u₀ = [45.0; 60.0; 0.0]
+predict_neuralODE(prob.p)
+
+cb(prob.p, 0.0)
+
+result_neuralode = DiffEqFlux.sciml_train(L₁, prob.p,
+  ADAM(0.05), cb = cb,
+  maxiters = 200)
