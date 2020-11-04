@@ -10,4 +10,6 @@ There are three julia notebooks that show,
 2. learning reaction kinetics using neural differential equations (NODEs),
 3. coupling these NODEs with reactor models.
 
+Contact: [Bram.De.Jaegher@gmail.com](mailto:bram.de.jaegher@gmail.com)
+
 ![footer](./figs/footerLogo.svg)
