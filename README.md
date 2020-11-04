@@ -63,6 +63,7 @@ it to use Conda on Linux by setting `ENV["JUPYTER"]=""` during installation (see
 [source](https://raw.githubusercontent.com/JuliaLang/IJulia.jl/master/README.md)
 
 
+-----
 Contact: [Bram.De.Jaegher@gmail.com](mailto:bram.de.jaegher@gmail.com)
 
 ![footer](./figs/footerLogo.svg)
