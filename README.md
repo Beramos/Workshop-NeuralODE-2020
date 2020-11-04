@@ -19,8 +19,7 @@ There are three julia notebooks that show,
 ## Installation instructions
 ### Installing Julia
 1. Download the *Julia* binaries for your system [here](https://julialang.org/downloads/) we suggest to install the Long-term support release, v1.0.5
-2. Check the [Platform Specific Instructions](https://julialang.org/downloads/platform.html) of the official website to install *Julia*
-3. Yes, it is that simple :zap:
+2. Yes, it is that simple :zap:
 
 ### Installing IJulia
 Then run the Julia application
