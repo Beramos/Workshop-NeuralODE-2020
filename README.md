@@ -7,11 +7,13 @@ A 45 minute showcase on the how and the why of neural differential equations.
 ## Content
 There are three julia notebooks that show,
 
-1. an introduction to machine learning and neural networks,
+1. [notebook 1]() an introduction to machine learning and neural networks,
 
 ![reaction rates](./figs/anns.png)
 
 2. learning reaction kinetics using neural differential equations (NODEs),
+
+![training](./figs/training.gif)
 
 ![reaction rates](./figs/reactionRate.png)
 
