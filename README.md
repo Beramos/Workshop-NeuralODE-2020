@@ -16,10 +16,6 @@ There are three julia notebooks that show,
 
 [Notebook 3 (WIP):](./) coupling these NODEs with reactor models.
 
-Contact: [Bram.De.Jaegher@gmail.com](mailto:bram.de.jaegher@gmail.com)
-
-![footer](./figs/footerLogo.svg)
-
 ## Installation instructions
 ### Installing Julia
 1. Download the *Julia* binaries for your system [here](https://julialang.org/downloads/) we suggest to install the Long-term support release, v1.0.5
@@ -67,3 +63,7 @@ it to use Conda on Linux by setting `ENV["JUPYTER"]=""` during installation (see
 
 [source](https://raw.githubusercontent.com/JuliaLang/IJulia.jl/master/README.md)
 
+
+Contact: [Bram.De.Jaegher@gmail.com](mailto:bram.de.jaegher@gmail.com)
+
+![footer](./figs/footerLogo.svg)
