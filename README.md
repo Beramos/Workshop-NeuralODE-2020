@@ -1,5 +1,5 @@
 # Workshop-NeuralODE-2020
-A 30 minute showcase on the how and the why of neural differential equations. 
+A 30-minute showcase on the how and the why of neural differential equations. 
 
 ## Content
 There are three julia notebooks that show,
