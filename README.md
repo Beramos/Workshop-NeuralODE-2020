@@ -14,7 +14,7 @@ There are three julia notebooks that show,
 
 ![reaction rates](./figs/reactionRate.png)
 
-[Notebook 3 (WIP):](./) coupling these NODEs with reactor models.
+[Notebook 3:](./03-hybrid.ipynb) coupling these NODEs with reactor models.
 
 ## Installation instructions
 ### Installing Julia
