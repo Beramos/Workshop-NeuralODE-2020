@@ -42,9 +42,34 @@ setting `ENV["JUPYTER"]` to the path of the `jupyter` program
 before `Pkg.add`, or before running `Pkg.build("IJulia")`;
 your preference is remembered on subsequent updates.
 
-### Running the IJulia Notebook
-If you are comfortable managing your own Python/Jupyter installation, you can just run `jupyter notebook` yourself in a terminal. To simplify installation, you can alternatively type the following in Julia, at the `julia>` prompt:
+### Installing the packages (first time running workshop)
+
+After downloading Julia clone/download this repository to a location of your choice. Then start Julia. For *linux/MAC users* just use the command line and navigate to your local copy of the repository.
+For *windows users* copy the path to the repository and navigate Julia to that directory as follows,
+type ";" to go to the bash shell (red),
+
+```bash
+cd /change/this/to/the/location/of/Workshop-NeuralODE-2020 
+```
+
+Now that Julia has been navigated to the right working directory regardless of the operating system we can start the workshop.
+
+In the normal Julia shell (green), activate the package and install the right packages. This can take a few minutes.
+
 ```julia
+import Pkg
+Pkg.activate(".")
+Pkg.instantiate()  # only the first time you run this environment
+```
+
+After a succesful installation of the packages the jupyter notebooks can be started.
+
+### Running the notebook
+
+type the following in Julia, at the `julia>` prompt:
+```julia
+import Pkg
+Pkg.activate(".")
 using IJulia
 notebook()
 ```
